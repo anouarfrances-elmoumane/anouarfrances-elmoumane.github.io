@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF9F6;
+    --ink: #1F1E1B;
+    --ink-soft: #5B5850;
+    --accent: #3B4A3E;
+    --rule: #D9D6CD;
+    --serif: 'EB Garamond', Georgia, serif;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6vh 6vw;
+  }
+
+  .page {
+    display: grid;
+    grid-template-columns: minmax(220px, 320px) 1px minmax(320px, 480px);
+    gap: 48px;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+  }
+
+  .photo-col img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(15%);
+    border: 1px solid var(--rule);
+  }
+
+  .divider {
+    align-self: stretch;
+    background: var(--rule);
+    width: 1px;
+  }
+
+  .content-col {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  .role {
+    margin: -12px 0 0 0;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+  }
+
+  .bio {
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--ink);
+    max-width: 46ch;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 4px 0;
+  }
+
+  .links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .links li {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 0.92rem;
+  }
+
+  .links .num {
+    color: var(--accent);
+    font-size: 0.8rem;
+  }
+
+  .links a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .links a:hover,
+  .links a:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  a:focus-visible,
+  img:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 640px) {
+    .page {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      text-align: left;
+    }
+    .divider { display: none; }
+    .photo-col img { max-width: 220px; aspect-ratio: 4/5; }
+    h1 { font-size: 2rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .links a { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+  <main class="page">
+
+    <div class="photo-col">
+      <!-- Replace src with your own photo. Keep the aspect-ratio close to 4:5 for the crop to look right. -->
+      <img src="your-photo.jpg" alt="Portrait of Your Name">
+    </div>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <div class="content-col">
+      <div>
+        <p class="eyebrow">Est. 2026</p>
+        <h1>Your Name</h1>
+        <p class="role">Whatever it is you do</p>
+      </div>
+
+      <p class="bio">
+        A short line or two about who you are and what you're working on.
+        Keep it plain and specific — a sentence about your focus, and
+        maybe a sentence about where you've been or what you're curious about.
+      </p>
+
+      <hr>
+
+      <ul class="links">
+        <li><span class="num">01</span><a href="mailto:you@example.com">email</a></li>
+        <li><span class="num">02</span><a href="https://github.com/yourhandle" target="_blank" rel="noopener">github</a></li>
+        <li><span class="num">03</span><a href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener">linkedin</a></li>
+        <li><span class="num">04</span><a href="https://yourdomain.com/cv.pdf" target="_blank" rel="noopener">cv</a></li>
+      </ul>
+    </div>
+
+  </main>
+
+</body>
+</html>
